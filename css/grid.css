@@ -19,6 +19,10 @@
 	margin: 0 auto;
 }
 
+.container-fluid {
+  width: 100%;
+}
+
 @media (max-width: 767px){
     /* For tablets: */
     .col-s-1 {width: 8.33%;}
