@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i');
 
 * {
 	box-sizing: border-box;
@@ -19,8 +19,6 @@ body {
 	letter-spacing: 2px;
 	padding: 35px;
 }
-
-/*HERO SECTION + NAVIGATION*/
 
 header {
 	background: url(../img/hero.jpg);
@@ -52,7 +50,7 @@ nav ul li a {
 
 nav ul li a:hover {
 	color: #64c29e;
-	transition: 0.3s;
+	transition: ease-in-out .3s;
 }
 
 .padding-reset {
@@ -75,8 +73,6 @@ nav ul li a:hover {
 	left: 0;
 }
 
-/* ABOUT SECTION */
-
 .about {
 	background: #f7f7f7;
 	height: 470px;
@@ -95,8 +91,6 @@ nav ul li a:hover {
 .about p {
 	color: #848789;
 }
-
-/* WORK SECTION */
 
 .work-bike-1 {
 	background: url(../img/work-bike1.jpg) center center no-repeat;
@@ -240,19 +234,141 @@ nav ul li a:hover {
 	height: 267px;
 }
 
-
 .black-bar {
 	background: #282f35;
 	height: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
+.contact {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.contact h2 {
+	font-weight: 300;
+	font-style: italic;
+	color: #848789;
+}
+
+.shop-button {
+	width: 300px;
+	height: 50px;
+	background: none;
+	border: 1px solid #94979a;
+	font-family: Lato;
+	color: #ffffff;
+	cursor: pointer;
+	font-size: 14px;
+}
+
+.shop-button:hover {
+	color: #64c29e;
+	transition: ease-in-out .3s;
+	border-color: #64c29e;
+}
+
+.email-input {
+	width: 400px;
+	height: 70px;
+	padding: 25px;
+	color: #d3d7d9;
+	border: 1px #d3d7d9 solid;
+	margin-right: 2px;
+}
 
 .contact {
 	background: #ffffff;
 	height: 470px;
+	text-align: center;
+}
+
+.go-button {
+	background: #64c29e;
+	width: 125px;
+	height: 70px;
+	border: none;
+	color: #ffffff;
+	font-size: 24px;
+	font-weight: 300;
+	cursor: pointer;
+	margin-left: 2px;
+}
+
+.newsletter {
+	display: flex;
 }
 
 footer {
 	background: #f7f7f7;
-	height: 200px;
+	height: 250px;
+}
+
+.footer-flex {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	height: 250px;
+}
+
+.first-adress {
+	color: #848789;
+	font-size: 16px;
+	margin: 0;
+	text-align: justify;
+}
+
+.sec-adress {
+	color: #848789;
+	font-size: 14px;
+	margin: 0;
+	text-align: justify;
+}
+
+.right-footer {
+	text-align: right;
+	color: #848789;
+	line-height: 28px;
+}
+
+.icon-btn {
+	margin:5px;
+	font-size: 25px;
+	line-height: 50px;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+	border: 0;
+	background:#FFFFFF;
+	color: #FFFFFF;
+	border-radius: 100%;
+	transition: ease-in-out .3s;
+}
+
+.icon-btn:hover {
+	transform: scale(1.10);
+}
+
+.twitter {
+	background: #4099FF;
+}
+
+.facebook {
+	background: #3B5998;
+}
+
+.pinrest {
+	background: #eb5755;
+}
+
+.yebo {
+	height: 36px;
+	width: 56px;
+	float: right;
+	margin-left: 12px;
 }
