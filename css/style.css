@@ -9,6 +9,10 @@ body {
 	margin: 0;
 }
 
+.hamburger-menu {
+	display: none;
+}
+
 .text {
 	height: 400px;
 	text-align: center;
@@ -190,48 +194,79 @@ nav ul li a:hover {
 	background: url(../img/shop-bike1.jpg) center center no-repeat;
 	background-size: cover;
 	height: 267px;
+	position: relative;
+	overflow: hidden;
 }
 
 .shop-bike2 {
 	background: url(../img/shop-bike2.jpg) center center no-repeat;
 	background-size: cover;
 	height: 267px;
+	position: relative;
 }
 
 .shop-bike3 {
 	background: url(../img/shop-bike3.jpg) center center no-repeat;
 	background-size: cover;
 	height: 267px;
+	position: relative;
 }
 
 .shop-bike4 {
 	background: url(../img/shop-bike4.jpg) center center no-repeat;
 	background-size: cover;
 	height: 534px;
+	position: relative;
 }
 
 .shop-bike5 {
 	background: url(../img/shop-bike5.jpg) center center no-repeat;
 	background-size: cover;
 	height: 534px;
+	position: relative;
 }
 
 .shop-bike6 {
 	background: url(../img/shop-bike6.jpg) center center no-repeat;
 	background-size: cover;
 	height: 267px;
+	position: relative;
 }
 
 .shop-bike7 {
 	background: url(../img/shop-bike7.jpg) center center no-repeat;
 	background-size: cover;
 	height: 267px;
+	position: relative;
 }
 
 .shop-bike8 {
 	background: url(../img/shop-bike8.jpg) center center no-repeat;
 	background-size: cover;
 	height: 267px;
+	position: relative;
+}
+
+.shop-now {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	font-size: 20px;
+	background: none;
+}
+
+.image-shop-now {
+	height: 54px;
+	width: 98px;
+	align-self: center;
+}
+
+.shop-bike1:hover .shop-now {
+	display: flex;
+	justify-content: center;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+	background:rgba(100,194,158,0.8);
 }
 
 .black-bar {
@@ -328,6 +363,7 @@ footer {
 	font-size: 14px;
 	margin: 0;
 	text-align: justify;
+	font-weight: 300;
 }
 
 .right-footer {
@@ -371,4 +407,68 @@ footer {
 	width: 56px;
 	float: right;
 	margin-left: 12px;
+}
+
+
+@media (max-width: 899px) {
+
+	footer {
+		height: auto;
+	}
+
+	.footer-flex {
+		display: flex;
+		flex-direction: row;
+		height: auto;
+		margin: 5px 0;
+	}
+
+	.footer-flex:first-of-type {
+		margin-top: 50px;
+	}
+
+	.first-adress, .sec-adress {
+	text-align: center;
+	}
+
+	.sec-adress {
+		margin-top: 5px;
+	}
+
+	nav {
+		text-align: left;
+	}
+
+	.menu {
+		display: none;
+	}
+
+	.mobile-menu {
+		display: flex;
+		margin: 0 25px;
+	}
+
+	.hamburger-menu {
+		display: block;
+		font-size: 28px;
+		cursor: pointer;
+		text-align: right;
+	}
+}
+
+
+@media (max-width: 600px) {
+	.newsletter {
+		flex-direction: column;
+	}
+	.go-button {
+		align-self: center;
+		margin-top: 20px;
+	}	
+}
+
+@media (max-width: 450px) {
+	.email-input {
+		width: 280px;
+	}
 }
