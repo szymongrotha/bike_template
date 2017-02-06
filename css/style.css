@@ -195,7 +195,6 @@ nav ul li a:hover {
 	background-size: cover;
 	height: 267px;
 	position: relative;
-	overflow: hidden;
 }
 
 .shop-bike2 {
@@ -250,23 +249,27 @@ nav ul li a:hover {
 .shop-now {
 	height: 100%;
 	width: 100%;
-	position: absolute;
 	font-size: 20px;
 	background: none;
+	transition: all 0.2s ease-in-out;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.shop-now:hover {
+	background:rgba(100,194,158,0.8);
+	cursor: pointer;
+}
+
+.shop-now:hover .image-shop-now {
+	display: block;
 }
 
 .image-shop-now {
+	display: none;
 	height: 54px;
 	width: 98px;
-	align-self: center;
-}
-
-.shop-bike1:hover .shop-now {
-	display: flex;
-	justify-content: center;
-	cursor: pointer;
-	transition: all 0.3s ease-in-out;
-	background:rgba(100,194,158,0.8);
 }
 
 .black-bar {
