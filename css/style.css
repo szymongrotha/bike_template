@@ -9,7 +9,26 @@ body {
 	margin: 0;
 }
 
-.hamburger-menu {
+#hamburger-menu {
+	display: none;
+}
+
+nav {
+	position: absolute;
+	top: 0px;
+}
+
+.desktop-content {
+	transition: height 0.5s linear;
+	height: 0;
+}
+
+.mobile-content {
+	transition: height 0.5s linear;
+	height: 300px;
+}
+
+.none {
 	display: none;
 }
 
@@ -26,7 +45,6 @@ body {
 
 header {
 	background: url(../img/hero.jpg);
-	height: 200px;
 	height: 100vh;
 	width: 100%;
 	background-size: cover;
@@ -415,6 +433,10 @@ footer {
 
 @media (max-width: 899px) {
 
+	header {
+		height: 685px;
+	}
+
 	footer {
 		height: auto;
 	}
@@ -431,7 +453,7 @@ footer {
 	}
 
 	.first-adress, .sec-adress {
-	text-align: center;
+		text-align: center;
 	}
 
 	.sec-adress {
@@ -439,7 +461,18 @@ footer {
 	}
 
 	nav {
-		text-align: left;
+		position: static;
+		background: url(../img/nav-bck.jpg);
+		width: 100%;
+		background-size: cover;
+		background-position: center;
+	}
+
+	nav ul li {
+		display: list-item;
+		list-style-type: none;
+		text-align: center;
+		margin-bottom: 50px;
 	}
 
 	.menu {
@@ -451,7 +484,7 @@ footer {
 		margin: 0 25px;
 	}
 
-	.hamburger-menu {
+	#hamburger-menu {
 		display: block;
 		font-size: 28px;
 		cursor: pointer;
