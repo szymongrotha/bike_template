@@ -133,7 +133,7 @@ nav ul li a:hover {
 }
 
 .work-bike-1 {
-	background: url(../img/work-bike1.jpg) 
+	background: url(../img/work-bike1.jpg) center center no-repeat;
 }
 
 .work-bike-2 {
@@ -180,6 +180,7 @@ nav ul li a:hover {
 
 .bike-logo {
 	background: url(../img/bike-logo.png) center center no-repeat;
+	opacity: 0;
 }
 
 .bike-logo2 {
