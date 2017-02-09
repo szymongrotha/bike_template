@@ -13,11 +13,6 @@ body {
 	display: none;
 }
 
-nav {
-	position: absolute;
-	top: 0px;
-}
-
 .desktop-content {
 	transition: height 0.5s linear;
 	height: 0;
@@ -25,17 +20,18 @@ nav {
 
 .mobile-content {
 	transition: height 0.5s linear;
+	background: linear-gradient(#F4F5FA, #F2F4F9); 
 	height: 300px;
 }
 
 .none {
 	opacity: 0;
-	transition: opacity 0.7s linear;
+	transition: opacity 0.1s linear;
 }
 
 .block {
 	opacity: 1.0;
-	transition: opacity 0.7s linear;
+	transition: opacity 0.8s linear;
 }
 
 .text {
@@ -58,6 +54,8 @@ header {
 }
 
 nav {
+	position: absolute;
+	top: 0px;
 	text-align: center;
 	padding-top: 20px;
 }
@@ -87,6 +85,10 @@ nav ul li a:hover {
 
 .relative {
 	position: relative;
+}
+
+.thin {
+	font-weight: 300;
 }
 
 .left {
@@ -120,18 +122,6 @@ nav ul li a:hover {
 	color: #848789;
 }
 
-.work-bike-1 {
-	background: url(../img/work-bike1.jpg) center center no-repeat;
-	background-size: cover;
-	height: 600px;
-}
-
-.work-bike-2 {
-	background:  url(../img/work-bike2.jpg) center center no-repeat;
-	background-size: cover;
-	height: 200px;
-}
-
 .work-text h2 {
 	font-size: 18px;
 }
@@ -142,51 +132,65 @@ nav ul li a:hover {
 	font-weight: 300;
 }
 
+.work-bike-1 {
+	background: url(../img/work-bike1.jpg) 
+}
+
+.work-bike-2 {
+	background:  url(../img/work-bike2.jpg) center center no-repeat;
+}
+
 .work-bike-3 {
 	background: url(../img/work-bike3.jpg) center center no-repeat;
-	background-size: cover;
-	height: 200px;
 }
 
 .work-bike-4 {
 	background: url(../img/work-bike4.jpg) center center no-repeat;
-	background-size: cover;
-	height: 600px;
 }
 
 .work-bike-5 {
 	background: url(../img/work-bike5.jpg) center center no-repeat;
-	background-size: cover;
-	height: 600px;
 }
 
 .work-bike-6 {
 	background: url(../img/work-bike6.jpg) center center no-repeat;
-	background-size: cover;
-	height: 200px;
 }
 
 .work-bike-7 {
 	background: url(../img/work-bike7.jpg) center center no-repeat;
+}
+
+.general-bike {
 	background-size: cover;
 	height: 600px;
 }
 
+.general-bike-2 {
+	position: relative;
+	display: flex;
+	background-size: cover;
+	height: 200px;
+	justify-content: center;
+}
+
+.arrow {
+	position: absolute;
+	top: -7px;
+}
 
 .bike-logo {
 	background: url(../img/bike-logo.png) center center no-repeat;
-	height: 100%;
-	width: 100%;
 }
 
 .bike-logo2 {
 	background: url(../img/bike-logo2.png) center center no-repeat;
-	height: 100%;
-	width: 100%;
 }
 
 .bike-logo3 {
 	background: url(../img/bike-logo3.png) center center no-repeat;
+}
+
+.bike-logo-general {
 	height: 100%;
 	width: 100%;
 }
@@ -205,10 +209,6 @@ nav ul li a:hover {
 	color: #a9afb3;
 }
 
-.thin {
-	font-weight: 300;
-}
-
 .tweet {
 	margin-top: 75px;
 	flex-grow: 3;
@@ -216,57 +216,45 @@ nav ul li a:hover {
 
 .shop-bike1 {
 	background: url(../img/shop-bike1.jpg) center center no-repeat;
-	background-size: cover;
-	height: 267px;
-	position: relative;
 }
 
 .shop-bike2 {
 	background: url(../img/shop-bike2.jpg) center center no-repeat;
-	background-size: cover;
-	height: 267px;
-	position: relative;
 }
 
 .shop-bike3 {
 	background: url(../img/shop-bike3.jpg) center center no-repeat;
-	background-size: cover;
-	height: 267px;
-	position: relative;
 }
 
 .shop-bike4 {
 	background: url(../img/shop-bike4.jpg) center center no-repeat;
-	background-size: cover;
-	height: 534px;
-	position: relative;
 }
 
 .shop-bike5 {
 	background: url(../img/shop-bike5.jpg) center center no-repeat;
-	background-size: cover;
-	height: 534px;
-	position: relative;
 }
 
 .shop-bike6 {
 	background: url(../img/shop-bike6.jpg) center center no-repeat;
-	background-size: cover;
-	height: 267px;
-	position: relative;
 }
 
 .shop-bike7 {
 	background: url(../img/shop-bike7.jpg) center center no-repeat;
+}
+
+.shop-bike8 {
+	background: url(../img/shop-bike8.jpg) center center no-repeat;
+}
+
+.shop-bike-general {
 	background-size: cover;
 	height: 267px;
 	position: relative;
 }
 
-.shop-bike8 {
-	background: url(../img/shop-bike8.jpg) center center no-repeat;
+.shop-bike-general-2 {
 	background-size: cover;
-	height: 267px;
+	height: 534px;
 	position: relative;
 }
 
@@ -286,14 +274,14 @@ nav ul li a:hover {
 	cursor: pointer;
 }
 
-.shop-now:hover .image-shop-now {
-	display: block;
-}
-
 .image-shop-now {
 	display: none;
 	height: 54px;
 	width: 98px;
+}
+
+.shop-now:hover .image-shop-now {
+	display: block;
 }
 
 .black-bar {
@@ -436,34 +424,9 @@ footer {
 	margin-left: 12px;
 }
 
-
 @media (max-width: 899px) {
-
 	header {
 		height: 685px;
-	}
-
-	footer {
-		height: auto;
-	}
-
-	.footer-flex {
-		display: flex;
-		flex-direction: row;
-		height: auto;
-		margin: 5px 0;
-	}
-
-	.footer-flex:first-of-type {
-		margin-top: 50px;
-	}
-
-	.first-adress, .sec-adress {
-		text-align: center;
-	}
-
-	.sec-adress {
-		margin-top: 5px;
 	}
 
 	nav {
@@ -496,6 +459,29 @@ footer {
 		cursor: pointer;
 		text-align: right;
 	}
+
+	footer {
+		height: auto;
+	}
+
+	.footer-flex {
+		display: flex;
+		flex-direction: row;
+		height: auto;
+		margin: 5px 0;
+	}
+
+	.footer-flex:first-of-type {
+		margin-top: 50px;
+	}
+
+	.first-adress, .sec-adress {
+		text-align: center;
+	}
+
+	.sec-adress {
+		margin-top: 5px;
+	}
 }
 
 
@@ -516,8 +502,7 @@ footer {
 }
 
 @media (min-width: 900px) {
-
-	.block {
+	.block, .mobile-content {
 		display: none;
 	}
 }
