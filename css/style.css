@@ -103,7 +103,7 @@ nav ul li a:hover {
 	left: 0;
 }
 
-.about {
+#aboutus {
 	background: #f7f7f7;
 	height: 470px;
 	width: 100%;
@@ -114,19 +114,19 @@ nav ul li a:hover {
 	letter-spacing: 2px;
 }
 
-.about h1 {
+#aboutus h1 {
 	font-weight: 600;
 }
 
-.about p {
+#aboutus p {
 	color: #848789;
 }
 
-.work-text h2 {
+#work-text h2 {
 	font-size: 18px;
 }
 
-.work-text p {
+#work-text p {
 	color: #848789;
 	text-align: justify;
 	font-weight: 300;
@@ -293,14 +293,17 @@ nav ul li a:hover {
 	align-items: center;
 }
 
-.contact {
+#contact {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	background: #ffffff;
+	height: 470px;
+	text-align: center;
 }
 
-.contact h2 {
+#contact h2 {
 	font-weight: 300;
 	font-style: italic;
 	color: #848789;
@@ -330,12 +333,6 @@ nav ul li a:hover {
 	color: #d3d7d9;
 	border: 1px #d3d7d9 solid;
 	margin-right: 2px;
-}
-
-.contact {
-	background: #ffffff;
-	height: 470px;
-	text-align: center;
 }
 
 .go-button {
