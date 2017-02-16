@@ -5,11 +5,20 @@ $(document).ready(function() {
 	});	
 
 	$('a[href^="#"]').on('click', function() {
-	var target = $(this.getAttribute('href'));
+		var target = $(this.getAttribute('href'));
+		var widthJs = $('html').width();
+			$('#mobile-menu-list').removeClass('mobile-content');
+			$('.none').removeClass('block');
 			event.preventDefault();
-			$('html, body').stop().animate({
-				scrollTop: target.offset().top
-			}, 1000);
+			if (widthJs <= 899) {
+				$('html, body').stop().animate({
+					scrollTop: target.offset().top - 300
+				}, 1000);
+			} else {
+				$('html, body').stop().animate({
+					scrollTop: target.offset().top
+				}, 1000);				
+			}
 	});
 
 	$('#work').waypoint(function() {
