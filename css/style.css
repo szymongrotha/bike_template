@@ -122,6 +122,10 @@ nav ul li a:hover {
 	color: #848789;
 }
 
+#work {
+	overflow: hidden;
+}
+
 #work-text h2 {
 	font-size: 18px;
 }
@@ -199,6 +203,7 @@ nav ul li a:hover {
 .slider {
 	height: 470px;
 	background: #f7f7f7;
+	overflow: hidden;
 }
 
 .slider .fa-twitter {
@@ -213,6 +218,27 @@ nav ul li a:hover {
 .tweet {
 	margin-top: 75px;
 	flex-grow: 3;
+}
+
+
+
+.first-slide, .sec-slide, .third-slide {
+	display: none;
+	height: 350px;
+}
+
+.hide-tweet {
+	opacity: 0;
+	transition: opacity 0.5s linear;
+}
+
+.show-tweet {
+	opacity: 1.0;
+	transition: opacity 0.5s linear;
+}
+
+.active {
+	display: block;
 }
 
 .shop-bike1 {

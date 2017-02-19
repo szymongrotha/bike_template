@@ -34,11 +34,54 @@ $(document).ready(function() {
 	}, { 
 		offset: '50%'	
 	});
+
 	$('.work3').waypoint(function(){
 		$('.retro-bike').css('opacity', 1.0).addClass('animated fadeInUp');
 		$('.bike-logo3').css('opacity', 1.0).addClass('animated bounceInLeft');
 	}, { 
 		offset: '50%'	
 	});
+
+	function carousel() {
+		setTimeout (function(){
+			$('.tweet-one').css('opacity', '0', 'transtion', 'transition: opacity 0.5s linear');
+		},3000)
+		setTimeout (function(){
+			$('.first-slide').removeClass('active');
+			$('.sec-slide').addClass('active');
+			$('.first').removeClass('fa-circle').addClass('fa-circle-thin');
+			$('.sec').removeClass('fa-circle-thin').addClass('fa-circle');
+		},3500)
+		setTimeout (function(){
+			$('.tweet-two').css('opacity', '1.0');
+		},3600)
+		setTimeout (function(){
+			$('.tweet-two').css('opacity', '0');
+		},6600)
+		setTimeout (function(){
+			$('.sec-slide').removeClass('active');
+			$('.third-slide').addClass('active');
+			$('.sec').removeClass('fa-circle').addClass('fa-circle-thin');
+			$('.third').removeClass('fa-circle-thin').addClass('fa-circle');
+		},7100)		
+		setTimeout (function(){
+			$('.tweet-three').css('opacity', '1.0');					
+		},7400)
+		setTimeout (function(){
+			$('.tweet-three').css('opacity', '0');
+		},10400)
+		setTimeout (function(){
+			$('.third-slide').removeClass('active');
+			$('.first-slide').addClass('active');
+			$('.third').removeClass('fa-circle').addClass('fa-circle-thin');
+			$('.first').removeClass('fa-circle-thin').addClass('fa-circle');
+		},11000)
+		setTimeout (function(){
+			$('.tweet-one').css('opacity', '1.0');					
+		},11100)		
+	}
+
+	carousel()
+	setInterval(carousel, 11100)
 });
 
