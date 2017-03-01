@@ -1,46 +1,90 @@
+(function modularBikeTemplate() {
+	var bikeObject = {
+		init: function() {
+			this.cacheDom();
+			this.bindEvents();
+			this.breakPoints();
+			console.log("I'm modular!")
+		},
+		cacheDom: function() {
+			this.$mobileMenu = $('#hamburger-menu');
+			this.$menuLink = $('a[href^="#"]');
+			this.$workSection = $('#work');
+			this.$workSection2 = $('.work2');
+			this.$workSection3 = $('.work3');				
+			this.$bikeLogo = $('.bike-logo');
+			this.$bikeTitle = $('.vintage-olivia');
+			this.$bikeLogo = $('.bike-logo');
+			this.$bikeTitle = $('.vintage-olivia');
+			this.$bikeLogoTwo = $('.bike-logo2');
+			this.$bikeTitleTwo = $('.la-boriosa');
+			this.$bikeLogoThree = $('.bike-logo3');
+			this.$bikeTitleThree = $('.retro-bike');										
+		},
+
+		bindEvents: function() {
+			this.$mobileMenu.on('click', this.hamburgerMenu);
+			this.$menuLink.on('click', this.hrefSlide);
+		},
+
+		breakPoints: function() {
+			this.$workSection.waypoint(this.breakPointOne.bind(this), { 
+				offset: '50%'
+			}),
+
+			this.$workSection2.waypoint(this.breakPointTwo.bind(this), { 
+				offset: '50%'	
+			}),
+			
+			this.$workSection3.waypoint(this.breakPointThree.bind(this), { 
+				offset: '50%'	
+			});
+		},
+
+		breakPointOne: function(){
+				this.$bikeTitle.css('opacity', 1.0).addClass('animated fadeInUp');
+				this.$bikeLogo.css('opacity', 1.0).addClass('animated bounceInLeft');
+		}, 
+
+		breakPointTwo: function(){
+				this.$bikeTitleTwo.css('opacity', 1.0).addClass('animated fadeInUp');
+				this.$bikeLogoTwo.css('opacity', 1.0).addClass('animated bounceInLeft');
+		},
+
+		breakPointThree: function(){
+				this.$bikeTitleThree.css('opacity', 1.0).addClass('animated fadeInUp');
+				this.$bikeLogoThree.css('opacity', 1.0).addClass('animated bounceInLeft');
+		},
+
+		hamburgerMenu: function() {
+			$('#mobile-menu-list').toggleClass('mobile-content');
+			$('.none').toggleClass('block');
+		},
+
+		hrefSlide: function() {
+			var target = $(this.getAttribute('href'));
+			var widthJs = $('html').width();
+				$('#mobile-menu-list').removeClass('mobile-content');
+				$('.none').removeClass('block');
+				event.preventDefault();
+				if (widthJs <= 899) {
+					$('html, body').stop().animate({
+						scrollTop: target.offset().top - 300
+					}, 1000);
+				} else {
+					$('html, body').stop().animate({
+						scrollTop: target.offset().top
+					}, 1000);				
+				}
+		},
+	}
+
+	bikeObject.init();
+
+})()
+
+
 $(document).ready(function() {
-	$('#hamburger-menu').click(function() {
-		$('#mobile-menu-list').toggleClass('mobile-content');
-		$('.none').toggleClass('block');
-	});	
-
-	$('a[href^="#"]').on('click', function() {
-		var target = $(this.getAttribute('href'));
-		var widthJs = $('html').width();
-			$('#mobile-menu-list').removeClass('mobile-content');
-			$('.none').removeClass('block');
-			event.preventDefault();
-			if (widthJs <= 899) {
-				$('html, body').stop().animate({
-					scrollTop: target.offset().top - 300
-				}, 1000);
-			} else {
-				$('html, body').stop().animate({
-					scrollTop: target.offset().top
-				}, 1000);				
-			}
-	});
-
-	$('#work').waypoint(function() {
-		$('.bike-logo').css('opacity', 1.0).addClass('animated bounceInLeft');
-		$('.vintage-olivia').css('opacity', 1.0).addClass('animated fadeInUp');
-	}, { 
-		offset: '50%'	
-	});
-
-	$('.work2').waypoint(function(){
-		$('.la-boriosa').css('opacity', 1.0).addClass('animated fadeInUp');
-		$('.bike-logo2').css('opacity', 1.0).addClass('animated bounceInRight');
-	}, { 
-		offset: '50%'	
-	});
-
-	$('.work3').waypoint(function(){
-		$('.retro-bike').css('opacity', 1.0).addClass('animated fadeInUp');
-		$('.bike-logo3').css('opacity', 1.0).addClass('animated bounceInLeft');
-	}, { 
-		offset: '50%'	
-	});
 
 	function carousel() {
 		setTimeout (function(){
