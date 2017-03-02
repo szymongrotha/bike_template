@@ -189,10 +189,12 @@ nav ul li a:hover {
 
 .bike-logo2 {
 	background: url(../img/bike-logo2.png) center center no-repeat;
+	opacity: 0;
 }
 
 .bike-logo3 {
 	background: url(../img/bike-logo3.png) center center no-repeat;
+	opacity: 0;
 }
 
 .bike-logo-general {

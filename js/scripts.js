@@ -4,8 +4,8 @@
 			this.cacheDom();
 			this.bindEvents();
 			this.breakPoints();
-			console.log("I'm modular!")
 		},
+		
 		cacheDom: function() {
 			this.$mobileMenu = $('#hamburger-menu');
 			this.$menuLink = $('a[href^="#"]');
@@ -19,12 +19,21 @@
 			this.$bikeLogoTwo = $('.bike-logo2');
 			this.$bikeTitleTwo = $('.la-boriosa');
 			this.$bikeLogoThree = $('.bike-logo3');
-			this.$bikeTitleThree = $('.retro-bike');										
+			this.$bikeTitleThree = $('.retro-bike');
+			this.$mobileMenuList = $('#mobile-menu-list');
+			this.$none = $('.none');	
+			this.$htmlBody = $('html, body');
+			this.$html = $('html');									
 		},
 
 		bindEvents: function() {
-			this.$mobileMenu.on('click', this.hamburgerMenu);
-			this.$menuLink.on('click', this.hrefSlide);
+			this.$mobileMenu.on('click', this.hamburgerMenu.bind(this));
+			this.$menuLink.on('click', this.hrefSlide.bind(this));
+		},
+
+		hamburgerMenu: function() {
+			this.$mobileMenuList.toggleClass('mobile-content');
+			this.$none.toggleClass('block');
 		},
 
 		breakPoints: function() {
@@ -42,50 +51,42 @@
 		},
 
 		breakPointOne: function(){
-				this.$bikeTitle.css('opacity', 1.0).addClass('animated fadeInUp');
-				this.$bikeLogo.css('opacity', 1.0).addClass('animated bounceInLeft');
+			this.$bikeTitle.css('opacity', 1.0).addClass('animated fadeInUp');
+			this.$bikeLogo.css('opacity', 1.0).addClass('animated bounceInLeft');
 		}, 
 
 		breakPointTwo: function(){
-				this.$bikeTitleTwo.css('opacity', 1.0).addClass('animated fadeInUp');
-				this.$bikeLogoTwo.css('opacity', 1.0).addClass('animated bounceInLeft');
+			this.$bikeTitleTwo.css('opacity', 1.0).addClass('animated fadeInUp');
+			this.$bikeLogoTwo.css('opacity', 1.0).addClass('animated bounceInLeft');
 		},
 
 		breakPointThree: function(){
-				this.$bikeTitleThree.css('opacity', 1.0).addClass('animated fadeInUp');
-				this.$bikeLogoThree.css('opacity', 1.0).addClass('animated bounceInLeft');
+			this.$bikeTitleThree.css('opacity', 1.0).addClass('animated fadeInUp');
+			this.$bikeLogoThree.css('opacity', 1.0).addClass('animated bounceInLeft');
 		},
 
-		hamburgerMenu: function() {
-			$('#mobile-menu-list').toggleClass('mobile-content');
-			$('.none').toggleClass('block');
-		},
-
-		hrefSlide: function() {
-			var target = $(this.getAttribute('href'));
-			var widthJs = $('html').width();
-				$('#mobile-menu-list').removeClass('mobile-content');
-				$('.none').removeClass('block');
+		hrefSlide: function(that = this) {
+			var $target = $(that.currentTarget.attributes["0"].nodeValue);
+			var $widthJs = this.$html.width();
+				this.$mobileMenuList.removeClass('mobile-content');
+				this.$none.removeClass('block');
 				event.preventDefault();
-				if (widthJs <= 899) {
-					$('html, body').stop().animate({
-						scrollTop: target.offset().top - 300
+				if ($widthJs <= 899) {
+					this.$htmlBody.stop().animate({
+						scrollTop: $target.offset().top - 300
 					}, 1000);
 				} else {
-					$('html, body').stop().animate({
-						scrollTop: target.offset().top
+					this.$htmlBody.stop().animate({
+						scrollTop: $target.offset().top
 					}, 1000);				
 				}
 		},
 	}
-
 	bikeObject.init();
-
 })()
 
 
 $(document).ready(function() {
-
 	function carousel() {
 		setTimeout (function(){
 			$('.tweet-one').css('opacity', '0', 'transtion', 'transition: opacity 0.5s linear');
@@ -124,7 +125,6 @@ $(document).ready(function() {
 			$('.tweet-one').css('opacity', '1.0');					
 		},11100)		
 	}
-
 	carousel()
 	setInterval(carousel, 11100)
 });
