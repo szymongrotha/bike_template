@@ -220,27 +220,7 @@ nav ul li a:hover {
 .tweet {
 	margin-top: 75px;
 	flex-grow: 3;
-}
-
-
-
-.first-slide, .sec-slide, .third-slide {
-	display: none;
 	height: 350px;
-}
-
-.hide-tweet {
-	opacity: 0;
-	transition: opacity 0.5s linear;
-}
-
-.show-tweet {
-	opacity: 1.0;
-	transition: opacity 0.5s linear;
-}
-
-.active {
-	display: block;
 }
 
 .shop-bike1 {
