@@ -1,9 +1,11 @@
 (function modularBikeTemplate() {
 	var bikeObject = {
+		counter: 1,
 		init: function() {
 			this.cacheDom();
 			this.bindEvents();
 			this.breakPoints();
+			this.interval();
 		},
 		
 		cacheDom: function() {
@@ -23,7 +25,8 @@
 			this.$mobileMenuList = $('#mobile-menu-list');
 			this.$none = $('.none');	
 			this.$htmlBody = $('html, body');
-			this.$html = $('html');									
+			this.$html = $('html');		
+			this.$tweet = $('.tweet h2, .tweet p');				
 		},
 
 		bindEvents: function() {
@@ -66,8 +69,8 @@
 		},
 
 		hrefSlide: function(e) {
-			var $target = $(e.currentTarget.attributes["0"].nodeValue);
-			var $widthJs = this.$html.width();
+			var $target = $(e.currentTarget.attributes["0"].nodeValue),
+				$widthJs = this.$html.width();
 				this.$mobileMenuList.removeClass('mobile-content');
 				this.$none.removeClass('block');
 				event.preventDefault();
@@ -81,35 +84,39 @@
 					}, 1000);				
 				}
 		},
+
+		carousel: function() {
+			var h2_1 = 'AOD New York  @aod<span class="thin"> /  35 min</span>',
+				h2_2 = 'PNG Warsaw  @png<span class="thin"> /  15 min</span>',
+				h2_3 = 'ERR London  @err<span class="thin"> /  5 min</span>',
+				p_1 = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut tellus ac nulla semper rhoncus. Nullam a odio porttitor, dictum turpis vitae, pretium ante amet.',
+				p_2 = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut tellus ac nulla semper rhoncus.',
+				p_3 = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut tellus ac nulla semper rhoncus. Nullam a odio porttitor.',
+				result = eval('h2_' +this.counter),
+				result2 = eval('p_' +this.counter);
+
+			this.$tweet.fadeOut(1000, function () {
+				$('.tweet h2').html(result).fadeIn(1000);
+				$('.tweet p').html(result2).fadeIn(1000);
+   			});
+		},
+
+		getCounter: function() {
+			if (this.counter == 3) {
+				this.counter = 0;
+				setTimeout(this.carousel.bind(this), 2000)
+				this.counter++;
+			} else {
+				setTimeout(this.carousel.bind(this), 2000)
+				this.counter++;
+			}			
+		},
+
+		interval: function() {
+			setInterval(this.getCounter.bind(this), 4000);
+		},
 	}
 
 	bikeObject.init();
 
 })()
-
-var counter = 2;
-
-function carousel(counter) {
-	var h2_1 = 'AOD New York  @aod<span class="thin"> /  35 min</span>';
-	var h2_2 = 'PNG Warsaw  @png<span class="thin"> /  15 min</span>';
-	var h2_3 = 'ERR London  @err<span class="thin"> /  5 min</span>';
-	var result = eval('h2_' +counter);
-
-	$('.tweet h2, .tweet p').fadeOut(1000, function () {
-		$('.tweet h2').html(result).fadeIn(1000);
-		$('.tweet p').html("Second One").fadeIn(1000);
-   	});
-}
-
-function getCounter() {
-	if (counter === 4) {
-		counter = 1;
-		setTimeout(carousel(counter), 2000)
-		counter++;
-	} else {
-		setTimeout(carousel(counter), 2000)
-		counter++;
-	}
-}
-
-setInterval(getCounter, 4000);
