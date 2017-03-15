@@ -93,23 +93,28 @@
 				p_2 = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut tellus ac nulla semper rhoncus.',
 				p_3 = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut tellus ac nulla semper rhoncus. Nullam a odio porttitor.',
 				result = eval('h2_' +this.counter),
-				result2 = eval('p_' +this.counter);
+				result2 = eval('p_' +this.counter),
+				dot = ('.dot-'+(this.counter));
+				previousDot = ('.dot-'+(this.counter-1));
 
 			this.$tweet.fadeOut(1000, function () {
 				$('.tweet h2').html(result).fadeIn(1000);
 				$('.tweet p').html(result2).fadeIn(1000);
    			});
+
+			if (previousDot == '.dot-0') { previousDot = '.dot-3' }
+
+   			$('.dots ' +previousDot).removeClass('fa-circle').addClass('fa-circle-thin');
+   			$('.dots ' +dot).removeClass('fa-circle-thin').addClass('fa-circle');
 		},
 
 		getCounter: function() {
 			if (this.counter == 3) {
 				this.counter = 0;
-				setTimeout(this.carousel.bind(this), 2000)
-				this.counter++;
-			} else {
-				setTimeout(this.carousel.bind(this), 2000)
-				this.counter++;
-			}			
+			} 
+
+			setTimeout(this.carousel.bind(this), 2000)
+			this.counter++;
 		},
 
 		interval: function() {
